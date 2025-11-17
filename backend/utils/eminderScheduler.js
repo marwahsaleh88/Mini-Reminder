@@ -6,9 +6,13 @@ const jobs = {}; // store all jobs here
 export function scheduleReminder(reminder, callback) {
   const reminderTime = new Date(new Date(reminder.date) - 10 * 60 * 1000);
 
-  const job = schedule.scheduleJob(reminder._id.toString(), reminderTime, () => {
-    callback(reminder); // هنا ينفذ التذكير
-  });
+  const job = schedule.scheduleJob(
+    reminder._id.toString(),
+    reminderTime,
+    () => {
+      callback(reminder); // callback function to run when the reminder  s triggered
+    }
+  );
 
   jobs[reminder._id.toString()] = job; // save job
 }

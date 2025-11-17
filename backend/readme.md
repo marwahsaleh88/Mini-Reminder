@@ -187,6 +187,44 @@ POST http://localhost:3000/auth/login
 
 
 
-POST http://localhost:3000/auth/register    مستخدم جديد 
+POST http://localhost:3000/auth/register    
 
 
+###  Node-Schedule : 
+ist eine einfache Bibliothek für Node.js . Ideal für kleine Projekte, z. B. Erinnerungen
+
+
+
+
+```   js 
+
+// npm install node-schedule
+// Import the node-schedule library
+const schedule = require('node-schedule');
+
+// Imagine we have a function that sends a reminder to the user
+function sendReminderToUser(userId, message) {   
+  // In a real app, this could be:
+  // - sending a notification to the frontend via WebSocket
+  // - sending an email
+  // - saving a reminder in the database
+  console.log(`Reminder for user ${userId}: ${message}`);
+}
+
+// Schedule a job to run every day at 9:00 AM
+// The cron expression '0 9 * * *' means: minute=0, hour=9, every day
+schedule.scheduleJob('0 9 * * *', function(){
+  // This code runs automatically at 9:00 AM
+  // Right now, it just calls our reminder function
+  sendReminderToUser(1, "Time for your daily reminder!");
+});
+
+// Another example: schedule a one-time reminder at a specific date
+const date = new Date(2025, 10, 17, 18, 0, 0); // 17 Nov 2025, 18:00
+schedule.scheduleJob(date, function(){
+  // This will run exactly once at the given date/time
+  sendReminderToUser(1, "One-time reminder at 6 PM!");
+});
+
+
+```
