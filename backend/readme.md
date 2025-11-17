@@ -70,6 +70,18 @@ The **Mini-Reminder** project is an  application that allows users to register, 
   - Email delivery confirmation
 
 
+
+## Security & Logging
+
+- **Helmet** 🛡️  
+  Middleware for Express that adds extra security by setting HTTP headers.  
+  Helps protect against common web attacks (like XSS).
+
+- **Morgan** 📜  
+  Middleware for Express that logs incoming requests to the console.  
+  Useful for debugging and monitoring server activity.
+  
+      
 (((((((((((((((((((((((((((((((((((((((test )))))))))))))))))))))))))))))))))))))))
 post  
 http://localhost:3000/auth/register
