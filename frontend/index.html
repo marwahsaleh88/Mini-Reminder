@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reminder Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Reminder App</h1>
+
+  <section>
+    <h2>Register</h2>
+    <div class="form-row"><input id="regName" placeholder="Name"></div>
+    <div class="form-row"><input id="regEmail" type="email" placeholder="Email"></div>
+    <div class="form-row"><input id="regPassword" type="password" placeholder="Password"></div>
+    <div class="form-row"><button onclick="register()">Register</button></div>
+  </section>
+
+  <section>
+    <h2>Login</h2>
+    <div class="form-row"><input id="loginEmail" type="email" placeholder="Email"></div>
+    <div class="form-row"><input id="loginPassword" type="password" placeholder="Password"></div>
+    <div class="form-row"><button onclick="login()">Login</button></div>
+  </section>
+
+  <section>
+    <h2>Add Reminder</h2>
+    <div class="form-row"><input id="title" placeholder="Title"></div>
+    <div class="form-row"><input id="description" placeholder="Description"></div>
+    <div class="form-row"><input id="date" type="datetime-local"></div>
+    <div class="form-row notify-row">
+      <input id="notify" type="checkbox">
+      <label for="notify">Notify by Email</label>
+    </div>
+    <div class="form-row"><input id="reminderEmail" type="email" placeholder="Recipient Email"></div>
+    <div class="form-row"><button onclick="addReminder()">Add Reminder</button></div>
+  </section>
+
+  <section>
+    <h2>Reminders</h2>
+    <ul id="reminderList"></ul>
+  </section>
+
+  <section>
+    <h2>Users</h2>
+    <div class="form-row"><button onclick="getUsers()">Load Users</button></div>
+    <ul id="userList"></ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
